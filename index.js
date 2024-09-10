@@ -12,4 +12,20 @@ selectedItems.appendChild(li);
 const price=data.parentNode.childNodes[5].innerText.split(' ')[1];
 total=parseInt(total)+parseInt(price);
 document.getElementById('total').innerText=total;
+
+setField()
+}
+function setField(){
+    if(total>100){
+        const discount =total*0.2;
+        const grandTotal =document.getElementById('grand-total');
+        grandTotal.innerText=(total-discount).toFixed(2);
+
+
+        const discountField =document.getElementById('discount');
+        discountField.innerText=discount.toFixed(2);
+    }
+    else{
+       return total
+    }
 }
